@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    map:mapType="normal" >
+
+    <!-- Menu Panel -->
+
+    <RelativeLayout
+        android:id="@+id/menuPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/lezo"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:windowSoftInputMode="stateVisible|adjustPan" >
+
+        <Button
+            android:id="@+id/menu_lezomap"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:background="#353535"
+            android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white" >
+        </Button>
+
+        <View
+            android:id="@+id/menu_item_divider_1"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/menu_lezomap"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#b5b5b5" />
+
+        <Button
+            android:id="@+id/menu_eraikinak"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/menu_item_divider_1"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/eraikinak" >
+        </Button>
+
+        <View
+            android:id="@+id/menu_item_dividerra"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/menu_eraikinak"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:background="#b5b5b5" />
+
+        <Button
+            android:id="@+id/menu_iturriak"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/menu_item_dividerra"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/iturriak" >
+        </Button>
+
+        <View
+            android:id="@+id/menu_item_divider_2"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/menu_iturriak"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#b5b5b5" />
+
+        <Button
+            android:id="@+id/menu_baserriak"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/menu_item_divider_2"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/baserriak" >
+        </Button>
+
+        <View
+            android:id="@+id/menu_item_divider_3"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/menu_baserriak"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#b5b5b5" />
+
+        <Button
+            android:id="@+id/menu_denak"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/menu_item_divider_3"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/denak" >
+        </Button>  
+        <View
+            android:id="@+id/menu_item_divider_4"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/menu_denak"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="#b5b5b5" />
+
+        <Button
+            android:id="@+id/menu_hizkuntza"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/menu_item_divider_4"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:text="@string/hizkuntza" >
+        </Button>
+    </RelativeLayout>
+
+    <!-- Sliding Panel -->
+    <LinearLayout
+        android:id="@+id/slidingPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical|right"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="@string/menua"
+                        android:textColor="#FFFFFF" />
+
+                    <ImageView
+                        android:id="@+id/menuViewButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="0.10"
+                        android:clickable="true"
+                        android:contentDescription="@string/irudia"
+                        android:src="@drawable/fletxa"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+ </LinearLayout>
+ </RelativeLayout> 
+ </LinearLayout>
+ </FrameLayout>
