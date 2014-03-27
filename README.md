@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 A fast way to get started with the [Google Maps Android API v2](http://developers.google.com/maps/documentation/android).
 
 #### Current version of library dependencies:
@@ -105,3 +106,9 @@ Follow the instructions under "Add your API key" and try again.
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/googlemaps/hellomap-android/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+=======
+lezoMap
+=======
+
+Lezo mapa
+>>>>>>> d93f2eebeeb9222e527311dbb99ded618d7f61e8
