@@ -1,11 +1,13 @@
 package utolotu.lezo.eraikinmapa;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
@@ -26,7 +28,7 @@ public class kargatzailea extends SQLiteOpenHelper{
     private static String DB_NAME = "db.db";
     private SQLiteDatabase myDataBase;
     private final Context myContext;
-	// hondakin taulak
+	// gune taulak
 	private static final String TABLE_EU = "euskara";
 	private static final String TABLE_ES = "espanol";
     private static final int DB_VERSION = 1;
@@ -132,12 +134,12 @@ public class kargatzailea extends SQLiteOpenHelper{
 				int marker =R.drawable.marker;
 				int image = R.drawable.lezo;
 				Gunea g = new Gunea(cursor.getString(0),cursor.getString(1),cursor.getString(2),marker, image,lat,cursor.getString(6));
-				// Adding hondakin to list
+				// Adding gunea to list
 				guneList.add(g);
 			} while (cursor.moveToNext());
 		}
 		
-		// return hondakin list
+		// return gune list
 		return guneList;
 	}
 //	public ArrayList<Gunea> getGuneMota(String str,String zutabe)  throws IOException, SQLiteException {
@@ -174,36 +176,36 @@ public class kargatzailea extends SQLiteOpenHelper{
 		}
 	}
 
-//	public static List<Gunea> kargatu(GoogleMap mMap, String mota) {
-//		// TODO Auto-generated method stub
-//		List<Gunea> guneLista = new ArrayList<Gunea>();
-//
-//		Gunea gUdala 	= new Gunea("Udaletxea", "eraikina","lezoko udaletxea santokristo plazan dago. Eraikina ....",R.drawable.lezo,43.32103703,-1.89884573);
-//		guneLista.add(gUdala);
-//		Gunea gPlazeta 	= new Gunea("Plazeta futbol zelaia", "kirol instalazioa","lezoko futbol zelaia....",R.drawable.foot,43.32316398,-1.8944791);
-//		guneLista.add(gPlazeta);
-//		Gunea gElias 	= new Gunea("Elias", "eraikina","lezoko kale nagusian. Eraikina ....",R.drawable.armarria,43.3218566,-1.89949483);
-//		guneLista.add(gElias);
-//		Gunea gSKeliza 	= new Gunea("santo kristo eliza", "eraikina","lezoko udaletxea santokristo plazan dago. Eraikina ....",R.drawable.eliza,R.drawable.skristo,43.32123216,-1.89911127);
-//		guneLista.add(gSKeliza);
+	public static List<Gunea> kargatu(GoogleMap mMap, String mota) {
+		// TODO Auto-generated method stub
+		List<Gunea> guneLista = new ArrayList<Gunea>();
+
+		Gunea gUdala 	= new Gunea("Udaletxea","lezoko udaletxea santokristo plazan dago. Eraikina ....","Lezoko udaletxea",R.drawable.lezo,R.drawable.sanjuan,43.32103703,-1.89884573, "eraikina");
+		guneLista.add(gUdala);
+		Gunea gPlazeta 	= new Gunea("Plazeta", "lezoko futbol zelaia....","Plazeta futbol zelaia",R.drawable.foot,R.drawable.sanjuan,43.32316398,-1.8944791,"kirol instalazioa");
+		guneLista.add(gPlazeta);
+		Gunea gElias 	= new Gunea("Elias", "lezoko kale nagusian. Eraikina ....","Armarridun eraikina",R.drawable.armarria,R.drawable.sanjuan,43.3218566,-1.89949483,"eraikina");
+		guneLista.add(gElias);
+		Gunea gSKeliza 	= new Gunea("santo kristo eliza", "lezoko udaletxea santokristo plazan dago. Eraikina ....","eraikina",R.drawable.eliza,R.drawable.skristo,43.32123216,-1.89911127,"eraikina");
+		guneLista.add(gSKeliza);
 //		Gunea gSJBeliza = new Gunea("santo juan batailatzailea", "eraikina","lezoko udaletxea santokristo plazan dago. Eraikina ....",R.drawable.eliza,R.drawable.sanjuan,43.32081848,-1.89917028);
 //		guneLista.add(gSJBeliza);
 //		Gunea gGezala 	= new Gunea("Gezala auditoriuma", "eraikina","200X urtean inaguratu zen",R.drawable.arts,43.31978814,-1.8981564);
 //		guneLista.add(gGezala);
 //		Gunea gKN	= new Gunea("Kale Nagusikoa", "iturria","Kale nagusian dago...",R.drawable.iturria,43.32151202,-1.89927757);
 //		guneLista.add(gKN);
-//		Marker udala = mMap.addMarker(new MarkerOptions().position(gUdala.LatLng)
-//				.title(gUdala.name).snippet("Lezoko udaletxea")
-//	              .icon(BitmapDescriptorFactory.fromResource(gUdala.marker)));
-//		Marker plazeta = mMap.addMarker(new MarkerOptions().position(gPlazeta.LatLng)
-//				.title(gPlazeta.name).snippet("kirol instalazioa")
-//	              .icon(BitmapDescriptorFactory.fromResource(gPlazeta.marker)));
-//		Marker Elias = mMap.addMarker(new MarkerOptions().position(gElias.LatLng)
-//				.title(gElias.name).snippet("Armarridun etxea")
-//	              .icon(BitmapDescriptorFactory.fromResource(gElias.marker)));
-//		Marker SKeliza = mMap.addMarker(new MarkerOptions().position(gSKeliza.LatLng)
-//				.title(gSKeliza.name).snippet("Eliza")
-//	              .icon(BitmapDescriptorFactory.fromResource(gSKeliza.marker)));
+		Marker udala = mMap.addMarker(new MarkerOptions().position(gUdala.LatLng)
+				.title(gUdala.name).snippet("Lezoko udaletxea")
+	              .icon(BitmapDescriptorFactory.fromResource(gUdala.marker)));
+		Marker plazeta = mMap.addMarker(new MarkerOptions().position(gPlazeta.LatLng)
+				.title(gPlazeta.name).snippet("kirol instalazioa")
+	              .icon(BitmapDescriptorFactory.fromResource(gPlazeta.marker)));
+		Marker Elias = mMap.addMarker(new MarkerOptions().position(gElias.LatLng)
+				.title(gElias.name).snippet("Armarridun etxea")
+	              .icon(BitmapDescriptorFactory.fromResource(gElias.marker)));
+		Marker SKeliza = mMap.addMarker(new MarkerOptions().position(gSKeliza.LatLng)
+				.title(gSKeliza.name).snippet("Eliza")
+	              .icon(BitmapDescriptorFactory.fromResource(gSKeliza.marker)));
 //		Marker SJBeliza = mMap.addMarker(new MarkerOptions().position(gSJBeliza.LatLng)
 //				.title(gSJBeliza.name).snippet("Eliza")
 //	              .icon(BitmapDescriptorFactory.fromResource(gSJBeliza.marker)));
@@ -213,9 +215,9 @@ public class kargatzailea extends SQLiteOpenHelper{
 //
 //	    Marker kaleNagusikoa = mMap.addMarker(new MarkerOptions().position(gKN.LatLng).title("Kale Nagusian").snippet("KaleNagusikoa")
 //	              .icon(BitmapDescriptorFactory.fromResource(gKN.marker)));
-//		return guneLista;
-//	
-//	}
+		return guneLista;
+	
+	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {

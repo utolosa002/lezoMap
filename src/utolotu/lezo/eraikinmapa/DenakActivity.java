@@ -185,8 +185,8 @@ public class DenakActivity extends FragmentActivity {
     }
 	private void kargatuGuneak() {
 		// TODO Auto-generated method stub
-		Gunea guneUdala =new Gunea("Udaletxea", "eraikina","lezoko udaletxea santokristo plazan dago. Eraikina ....");
-	    Marker udala = mMap.addMarker(new MarkerOptions().position(guneUdala.LatLng).title("Udala").snippet("Lezoko udaletxea")
+		Gunea guneUdala	= new Gunea("Miura","miura. Eraikina ....","Miura baserria",R.drawable.lezo,R.drawable.sanjuan,43.32103703,-1.89884573, "baserria");
+		Marker udala = mMap.addMarker(new MarkerOptions().position(guneUdala.LatLng).title("Udala").snippet("Lezoko udaletxea")
 	              .icon(BitmapDescriptorFactory.fromResource(guneUdala.image)));
 	}
 }

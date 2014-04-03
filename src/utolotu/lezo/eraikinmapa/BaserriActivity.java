@@ -187,7 +187,7 @@ public class BaserriActivity  extends FragmentActivity {
     }
 	private void kargatuBaserriak() {
 		// TODO Auto-generated method stub
-		Gunea guneMiura =new Gunea("Miura", "Baserria","lezoko udaletxea santokristo plazan dago. Eraikina ....");
+		Gunea guneMiura 	= new Gunea("Miura","miura. Eraikina ....","Miura baserria",R.drawable.lezo,R.drawable.sanjuan,43.32103703,-1.89884573, "baserria");
 	    Marker Miura = mMap.addMarker(new MarkerOptions().position(guneMiura.LatLng).title("Miura").snippet("Lezoko udaletxea")
 	              .icon(BitmapDescriptorFactory.fromResource(guneMiura.image)));
 	}

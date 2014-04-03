@@ -56,5 +56,99 @@ public class Gunea{
 		this.LatLng= lat;
 		this.type=type;
 	}
+	public Gunea(String name,String description, String snippet, int marker, int image, Double lat, Double lon, String type) {
+		// TODO Auto-generated constructor stub
+		this.name= name;
+		this.description=description;
+		this.snippet=snippet;
+		this.marker=marker;
+		this.image=image;
+		this.LatLng= new LatLng(lat, lon);
+		this.type=type;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	/**
+	 * @return the snippet
+	 */
+	public String getSnippet() {
+		return snippet;
+	}
+	/**
+	 * @param snippet the snippet to set
+	 */
+	public void setSnippet(String snippet) {
+		this.snippet = snippet;
+	}
+	/**
+	 * @return the marker
+	 */
+	public int getMarker() {
+		return marker;
+	}
+	/**
+	 * @param marker the marker to set
+	 */
+	public void setMarker(int marker) {
+		this.marker = marker;
+	}
+	/**
+	 * @return the image
+	 */
+	public int getImage() {
+		return image;
+	}
+	/**
+	 * @param image the image to set
+	 */
+	public void setImage(int image) {
+		this.image = image;
+	}
+	/**
+	 * @return the latLng
+	 */
+	public LatLng getLatLng() {
+		return LatLng;
+	}
+	/**
+	 * @param latLng the latLng to set
+	 */
+	public void setLatLng(LatLng latLng) {
+		LatLng = latLng;
+	}
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
 
 }
